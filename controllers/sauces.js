@@ -31,7 +31,7 @@ exports.modifySauce = (req, res, next) => {
       .catch(error => res.status(400).json({ error }))
 }
 
-exports.deleteSauce = (req, res, next) => {
+exports.deleteSauce = (req, res, next) => { 
   Sauce.findOne({ _id: req.params.id })
       .then(sauce => {
           const filename = sauce.imageUrl.split('/images/')[1]
